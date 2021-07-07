@@ -38,6 +38,9 @@
             grid-column: 1/4;
             grid-row: 2/4;
         }
+        .two div{
+            border: 1px solid black;
+        }
         .three,.four,.five{
             grid-row:2/4;
         }
@@ -45,6 +48,23 @@
             grid-column:1/7;
             grid-row-start:4;
            
+        }
+        .nested{
+            display:grid;
+            grid-template-rows: repeat(4, .5fr);
+            grid-template-columns: repeat(4,.5fr);
+            gap:inherit;
+        }
+        .n1{
+            grid-column: 1/3;
+            grid-row: 1/5;
+        }
+        .n2{
+            grid-column: 3/5;
+            display: grid;
+        }
+        .n3, .n4{
+            grid-row: 2/5;
         }
     
         
@@ -55,7 +75,12 @@
 	<div id="content">
 
         <div class="one">1</div>
-		<div class="two">2</div>
+		<div class="two nested">
+            <div class = "n1">n1</div>
+            <div class = "n2">n2</div>
+            <div class = "n3">n3</div>
+            <div class = "n4">n4</div>
+        </div>
 		<div class="three">3</div>
 		<div class="four">4</div>
 		<div class="five">5</div>
